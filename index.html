@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beauty Shop - Home</title>
+  <style>
+    
+    /* Reset some basic styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+    }
+      .icon-text {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: lowercase;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+       .footer-logo {
+      font-family: 'Merriweather', serif;
+      font-weight: 900;
+      font-size: 2.5rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      color: #e1c700;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .aura-symbol {
+      width: 40px;
+      height: 40px;
+      fill: none;
+      stroke: #2f4436;
+      stroke-width: 2.5;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      filter: drop-shadow(0 0 1px #2f4436aa);
+    }
+    /* --- AURA LOGO SIZE FIX --- */
+.aura-logo svg {
+  width: 70px;
+  height: 70px;
+  color: #2f4436;
+}
+
+.aura-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.aura-logo .icon-text {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+
+
+    header {
+      background-color: #e1c700;
+      color: #ffffff;
+      padding: 20px 10px;
+      text-align: center;
+      font-weight: small;
+      font-size: 1.3rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 15px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2b2f33;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 8px 14px;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      border-color: #254539;
+      color: #2b2f33;
+    }
+
+    .search-bar {
+      text-align: center;
+      margin: 15px 0 35px;
+    }
+
+    .search-bar input {
+      max-width: 320px;
+      width: 90%;
+      padding: 12px 15px;
+      font-size: 16px;
+      border-radius: 25px;
+      border: 2px solid #e1c700;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .search-bar input:focus {
+      border-color: #e1c700;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 10px 40px;
+    }
+
+    h2 {
+      color: #2b2f33;
+      margin-bottom: 15px;
+      font-weight: 700;
+      border-bottom: 2px solid #1e3a5f;
+      padding-bottom: 6px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      height: 100%;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 6px 16px rgb(0 0 0 / 0.2);
+      transform: translateY(-5px);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .product-info {
+      padding: 15px 15px 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      min-height: 48px;
+    }
+
+    .product-brand {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    .buy-button {
+      background-color: #e1c700;
+      color: #fff;
+      text-align: center;
+      padding: 10px 8px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    
+
+    /* Responsive Text for smaller devices for header */
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.2rem;
+      }
+      nav a {
+        font-size: 0.9rem;
+      }
+      .product-name {
+        font-size: 1rem;
+        min-height: 56px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <marquee>Glow Everyday! 💄 Discover Top Beauty Brands, Fresh Deals & Exclusive Offers — Shop Now! 🌸 </marquee>
+  </header>
+  <div class="icon-item aura-logo" aria-label="Aura symbol">
+    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <circle cx="32" cy="32" r="14" stroke="currentColor" stroke-width="3" fill="none"/>
+          <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="6 6"/>
+          <circle cx="32" cy="32" r="26" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="2 4"/>
+          <path d="M32 6v10M32 48v10M6 32h10M48 32h10M18 18l7 7M39 39l7 7M18 46l7-7M39 25l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="icon-text"><u>aura</u></div>
+      </div>
+
+
+  <nav>
+    <a href="shop.html">Shop Category</a>
+    <a href="brands.html">Brands</a>
+    <a href="offers.html">Offers</a>
+    <a href="magazine.html">Magazine</a>
+    <a href="stand.html">About Us</a>
+  </nav>
+  <!-- Header Icons -->
+<div id="header-icons" style="
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  margin-top:-10px;
+  margin-bottom:15px;
+  font-size:22px;
+">
+  <i class="fa-solid fa-magnifying-glass" id="icon-search" style="cursor:pointer;"></i>
+  <i class="fa-regular fa-heart" id="icon-heart" style="cursor:pointer;"></i>
+  <i class="fa-solid fa-cart-shopping" id="icon-cart" style="cursor:pointer;"></i>
+  <i class="fa-regular fa-user" id="icon-user" style="cursor:pointer;"></i>
+</div>
+
+
+  <div class="search-bar">
+    <input type="search" placeholder="What are you looking for?">
+  </div>
+
+  <main>
+    <h2>Featured Beauty Products</h2>
+    <div class="products-grid" id="productsGrid">
+      <!-- Products will be injected here by JS -->
+    </div>
+  </main>
+
+  <script>
+    /* Product list with name, brand, image, and official URL for purchase */
+    const products = [
+      {
+        name: "MAC Ruby Woo Lipstick",
+        brand: "MAC Cosmetics",
+        image: "https://m.media-amazon.com/images/I/41HuF+vu4QL.jpg",
+        url: "https://www.maccosmetics.com/product/13854/20000/products/makeup/lips/lipstick/ruby-woo-lipstick"
+      },
+      {
+        name: "Fenty Beauty Gloss Bomb",
+        brand: "Fenty Beauty",
+        image: "https://fentybeauty.com/cdn/shop/files/FB_FALL23_T2PRODUCT_EDITORIAL_BUNDLE_LIP_GLOSSBOMB_FENTYGLOW_HOTCHOCOLIT-HEAT_CREAM_1200X1500_72DPI_1200x1200.jpg?v=1762277682",
+        url: "https://www.fentybeauty.com/gloss-bomb-universal-lip-luminizer/FFBE01.html"
+      },
+      {
+        name: "Sephora Collection Lip Balm",
+        brand: "Sephora",
+        image: "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000000494273998/mPRsZV-nnO-000000000494273998_1.png",
+        url: "https://www.sephora.com/product/sephora-collection-lip-balm-s2110200"
+      },
+      {
+        name: "Ulta Beauty Conditioning Shampoo",
+        brand: "Ulta",
+        image: "https://media.ulta.com/i/ulta/2637939?w=800&$ProductCardNeutralBGLight$&h=800&fmt=auto",
+        url: "https://www.ulta.com/ulta-beauty-conditioning-shampoo?productId=pimprod2007159"
+      },
+      {
+        name: "NYX Professional Makeup Matte Lipstick",
+        brand: "NYX",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTur8tC2OezOd3EBLNnbp8WyS9bmH3ptNurAg&s",
+        url: "https://www.nyxcosmetics.com/matte-lipstick/ANA01.html"
+      },
+      {
+        name: "MAC Prep + Prime Fix+",
+        brand: "MAC Cosmetics",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg3jEzTTwLKoFTxVNty6R6OSWvSoybk41jGw&s",
+        url: "https://www.maccosmetics.com/product/13843/60008/products/skincare/prep-prime-fix"
+      },
+      {
+        name: "Fenty Beauty Pro Filt'r Soft Matte Foundation",
+        brand: "Fenty Beauty",
+        image: "https://static.thcdn.com/productimg/original/15654354-2895210265210993.jpg",
+        url: "https://www.fentybeauty.com/pro-filtr-soft-matte-longwear-foundation/FBF20.html"
+      },
+      {
+        name: "Sephora Collection Waterproof Eye Makeup Remover",
+        brand: "Sephora",
+        image: "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000000494513615/HDWC6ZUCZfF-000000000494513615_1.jpg",
+        url: "https://www.sephora.com/product/sephora-collection-waterproof-eye-makeup-remover-s1798532"
+      },
+      {
+        name: "Ulta Beauty Illuminating Face Serum",
+        brand: "Ulta",
+        image: "https://media.ulta.com/i/ulta/2620259?w=400&h=400&fmt=auto",
+        url: "https://www.ulta.com/illuminating-face-serum?productId=pimprod2013937"
+      },
+      {
+        name: "NYX Professional Makeup Butter Gloss",
+        brand: "NYX",
+        image: "https://static.beautytocare.com/media/catalog/product/n/y/nyx-pro-makeup-butter-gloss-16-praline-8ml.jpg",
+        url: "https://www.nyxcosmetics.com/butter-gloss/NYX11276.html"
+      },
+      {
+        name: "MAC Strobe Cream",
+        brand: "MAC Cosmetics",
+        image: "https://images-static.nykaa.com/media/catalog/product/4/f/4fe19a2773602575534_05.jpg?tr=w-500",
+        url: "https://www.maccosmetics.com/product/13845/60008/products/skincare/strobe-cream"
+      },
+      {
+        name: "Fenty Beauty Sun Stalk'r Instant Warmth Bronzer",
+        brand: "Fenty Beauty",
+        image: "https://prettycosmo.com/cdn/shop/files/bajangyal05.jpg?v=1695800477&width=1024",
+        url: "https://www.fentybeauty.com/sun-stalkr-instant-warmth-bronzer/FBP03.html"
+      },
+      {
+        name: "Sephora Collection Makeup Brush Cleaner",
+        brand: "Sephora",
+        image: "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/sephora-collection/7024775/0/OpaL-hdmIh-1_Product_3378872188476-Sephora-Collection-No-Rinse-Brush-Cleaner-Spray-60-ml_5aea7a05c7981c8791ba765f6deac24ae98614f2_1677473897.png",
+        url: "https://www.sephora.com/product/sephora-collection-makeup-brush-cleaner-s1890737"
+      },
+      {
+        name: "Ulta Beauty Matte Lip Crayon",
+        brand: "Ulta",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc_4eh57KWZqozbmc0dxCv0v3bFDEaV3GRjg&s",
+        url: "https://www.ulta.com/matte-lip-crayon?productId=pimprod2013013"
+      },
+      {
+        name: "NYX Professional Makeup Total Control Drop Foundation",
+        brand: "NYX",
+        image: "https://www.nyxcosmetics.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-cpd-nyxusa-master-catalog/default/dw7d95a9e6/ProductImages/2021/Face/pro-drop-foundation/deep/TOTAL-CONTROL-PRO-DROP-FOUNDATION-Foundation-Deep-TCPDF22-000-0800897207076-SoldierSwatch.jpg",
+        url: "https://www.nyxcosmetics.com/total-control-drop-foundation/NYX10928.html"
+      }
+    ];
+
+    const grid = document.getElementById("productsGrid");
+
+    // Generate product cards and inject
+    products.forEach(product => {
+      const a = document.createElement("a");
+      a.href = product.url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.className = "product-card";
+
+      a.innerHTML = `
+        <img class="product-image" src="${product.image}" alt="${product.name}" />
+        <div class="product-info">
+          <div class="product-name">${product.name}</div>
+          <div class="product-brand">${product.brand}</div>
+          <div class="buy-button">Buy Now</div>
+        </div>
+      `;
+      grid.appendChild(a);
+    });
+  // Icon click actions
+  document.getElementById("icon-search").onclick = function () {
+      document.querySelector(".search-bar input").focus();
+  };
+
+  document.getElementById("icon-heart").onclick = function () {
+      window.location.href = "wishlist.html";  // create page if needed
+  };
+
+  document.getElementById("icon-cart").onclick = function () {
+      window.location.href = "cart.html";  // cart page
+  };
+
+  document.getElementById("icon-user").onclick = function () {
+      window.location.href = "profile.html";  // user account page
+  };
+
+  // Mobile responsive icon sizing
+  function adjustIconSize() {
+      const icons = document.querySelectorAll("#header-icons i");
+      if (window.innerWidth < 600) {
+          icons.forEach(icon => icon.style.fontSize = "18px");
+      } else {
+          icons.forEach(icon => icon.style.fontSize = "22px");
+      }
+  }
+
+  window.addEventListener("resize", adjustIconSize);
+  adjustIconSize();
+</script>
+
+  </script>
+</body>
+</html>

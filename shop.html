@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Category - Beauty Shop</title>
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: small;
+            font-weight: 100;
+          }
+          
+        
+          
+          nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 15px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2b2f33;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 8px 14px;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      border-color: #254539;
+      color: #2b2f33;
+    }
+        .subcategory {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f2f4f7;
+            border: 1px solid white;
+        }
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .product {
+            background-color: #e1c700;
+            border: 1px solid #e1c700;
+            padding: 10px;
+            width: 150px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .brands {
+            display: none;
+            margin-top: 10px;
+        }
+        .brand-link {
+            display: block;
+            margin: 5px;
+            padding: 5px;
+            background-color: #f3e99d;
+            text-decoration:none;
+            color: #333;
+        }
+    </style>
+    <script>
+        function toggleBrands(id) {
+            const brands = document.getElementById(id + '-brands');
+            brands.style.display = brands.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Shop Category</h1>
+        <h2><marquee>✨ Explore Our Top Categories — Skincare, Haircare, Lipcare & More! Find Your Perfect Match 💖🛍️</marquee></h2>
+        
+    </header>
+    <a href="index.html">Back to Home</a>
+    <nav>
+    <a href="shop.html">Shop Category</a>
+    <a href="brands.html">Brands</a>
+    <a href="offers.html">Offers</a>
+    <a href="magazine.html">Magazine</a>
+    <a href="stand.html">About Us</a>
+  </nav>
+
+    <section class="subcategory">
+        <h2>Lipcare</h2>
+        <div class="products">
+            <div class="product" onclick="toggleBrands('lipbalm')">Lip Balm</div>
+            <div class="product" onclick="toggleBrands('lipstick')">Lipstick</div>
+            <div class="product" onclick="toggleBrands('lipgloss')">Lip Gloss</div>
+        </div>
+        <div class="brands" id="lipbalm-brands">
+            <a class="brand-link" href="https://www.sephora.com/product/lip-balm-P12345" target="_blank">Sephora Lip Balm</a>
+            <a class="brand-link" href="https://www.ulta.com/lip-balm" target="_blank">Ulta Lip Balm</a>
+            <a class="brand-link" href="https://www.maccosmetics.com/product/13854/20000/products/makeup/lips/lipstick/ruby-woo-lipstick" target="_blank">MAC Lip Balm (Ruby Woo)</a>
+        </div>
+        <div class="brands" id="lipstick-brands">
+            <a class="brand-link" href="https://www.sephora.com/product/ruby-woo-lipstick-P8164" target="_blank">Sephora Ruby Woo Lipstick</a>
+            <a class="brand-link" href="https://www.ulta.com/lipstick" target="_blank">Ulta Lipstick</a>
+            <a class="brand-link" href="https://www.nyxcosmetics.com/lipstick" target="_blank">NYX Lipstick</a>
+        </div>
+        <div class="brands" id="lipgloss-brands">
+            <a class="brand-link" href="https://www.sephora.com/product/lip-gloss-P12346" target="_blank">Sephora Lip Gloss</a>
+            <a class="brand-link" href="https://www.ulta.com/lip-gloss" target="_blank">Ulta Lip Gloss</a>
+            <a class="brand-link" href="https://www.fentybeauty.com/lip-gloss" target="_blank">Fenty Beauty Lip Gloss</a>
+        </div>
+    </section>
+
+    <section class="subcategory">
+        <h2>Hair Care</h2>
+        <div class="products">
+            <div class="product" onclick="toggleBrands('shampoo')">Shampoo</div>
+            <div class="product" onclick="toggleBrands('conditioner')">Conditioner</div>
+            <div class="product" onclick="toggleBrands('hairoil')">Hair Oil</div>
+        </div>
+        <div class="brands" id="shampoo-brands">
+            <a class="brand-link" href="https://www.sephora.com/product/shampoo-P12347" target="_blank">Sephora Shampoo</a>
+            <a class="brand-link" href="https://www.ulta.com/shampoo" target="_blank">Ulta Shampoo</a>
+            <a class="brand-link" href="https://www.maccosmetics.com/product/13855/20000/products/makeup/hair/shampoo" target="_blank">MAC Shampoo</a>
+        </div>
+        <div class="brands" id="conditioner-brands">
+            <a class="brand-link" href="https://www.sephora.com/product/conditioner-P12348" target="_blank">Sephora Conditioner</a>
+            <a class="brand-link" href="https://www.ulta.com/conditioner" target="_blank">Ulta Conditioner</a>
+            <a class="brand-link" href="https://www.nyxcosmetics.com/conditioner" target="_blank">NYX Conditioner</a>
+        </div>
+        <div class="brands" id="hairoil-brands">
+            <a class="brand-link" href="https://www.sephora.com/product/hair-oil-P12349" target="_blank">Sephora Hair Oil</a>
+            <a class="brand-link" href="https://www.ulta.com/hair-oil" target="_blank">Ulta Hair Oil</a>
+            <a class="brand-link" href="https://www.fentybeauty.com/hair-oil" target="_blank">Fenty Beauty Hair Oil</a>
+        </div>
+    </section>
+
+    <section class="subcategory">
+        <h2>Skincare</h2>
+        <div class="products">
+            <div class="product" onclick="toggleBrands('moisturizer')">Moisturizer</div>
+            <div class="product" onclick="toggleBrands('cleanser')">Cleanser</div>
+            <div class="product" onclick="toggleBrands('serum')">Serum</div>
+        </div>
+        <div class="brands" id="moisturizer-brands">
+            <a class="brand-link" href="https://www.sephora.com/product/moisturizer-P12350" target="_blank">Sephora Moisturizer</a>
+            <a class="brand-link" href="https://www.ulta.com/moisturizer" target="_blank">Ulta Moisturizer</a>
+            <a class="brand-link" href="https://www.maccosmetics.com/product/13856/20000/products/skincare/moisturizer" target="_blank">MAC Moisturizer</a>
+        </div>
+        <div class="brands" id="cleanser-brands">
+            <a class="brand-link" href="https://www.sephora.com/product/cleanser-P12351" target="_blank">Sephora Cleanser</a>
+            <a class="brand-link" href="https://www.ulta.com/cleanser" target="_blank">Ulta Cleanser</a>
+            <a class="brand-link" href="https://www.nyxcosmetics.com/cleanser" target="_blank">NYX Cleanser</a>
+        </div>
+        <div class="brands" id="serum-brands">
+            <a class="brand-link" href="https://www.sephora.com/product/serum-P12352" target="_blank">Sephora Serum</a>
+            <a class="brand-link" href="https://www.ulta.com/serum" target="_blank">Ulta Serum</a>
+            <a class="brand-link" href="https://www.fentybeauty.com/serum" target="_blank">Fenty Beauty Serum</a>
+        </div>
+    </section>
+</body>
+</html>

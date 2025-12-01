@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What We Stand For & Footer with Aura Symbol</title>
+  <style>
+    /* Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,700&display=swap');
+    /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f5f1e8;
+      color: #333;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+      nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 15px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2b2f33;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 8px 14px;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      border-color: #254539;
+      color: #2b2f33;
+    }
+
+    /* === What We Stand For Section === */
+    .stand-for-section {
+      background-color: #e1c700;
+      color: #666243; /* Soft muted yellow */
+      text-align: center;
+      padding: 60px 15px 40px;
+    }
+    .stand-for-section h2 {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 0.25em;
+    }
+    .stand-for-section p {
+      max-width: 650px;
+      margin: 0 auto 40px auto;
+      font-weight: 400;
+      font-size: 1.15rem;
+      letter-spacing: 0.05em;
+    }
+
+    .icons-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .icon-item {
+      background-color: #56522d;
+      color:#e1c700 ;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: default;
+      transition: transform 0.3s ease;
+      flex: 0 0 auto;
+      user-select: none;
+    }
+    .icon-item:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #d9d49baa;
+    }
+
+    /* Aura Symbol SVG Styling */
+    
+    .icon-text {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    /* === Footer Section === */
+    footer {
+      background-color: #f5f1e8;
+      color: #000000;
+      padding: 60px 20px 40px;
+      font-size: 0.95rem;
+    }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1150px;
+      margin: 0 auto;
+      gap: 40px;
+      justify-content: space-between;
+    }
+    .footer-col {
+      flex: 1 1 250px;
+      min-width: 220px;
+    }
+
+    /* Aura logo style */
+    .footer-logo {
+      font-family: 'Merriweather', serif;
+      font-weight: 900;
+      font-size: 2.5rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      color: #e1c700;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .aura-symbol {
+      width: 40px;
+      height: 40px;
+      fill: none;
+      stroke: #2f4436;
+      stroke-width: 2.5;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      filter: drop-shadow(0 0 1px #2f4436aa);
+    }
+    .footer-contact > div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-contact svg {
+      color: #786d1b;
+      fill:#786d1b ;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      
+    }
+
+    /* Help Section */
+    .footer-help h3 {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #786d1b;
+      user-select: none;
+    }
+    .footer-help ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      line-height: 1.9;
+      font-weight: 500;
+      color: #786d1b;
+    }
+    .footer-help ul li {
+      cursor: pointer;
+    }
+    .footer-help ul li:hover {
+      text-decoration: underline;
+      color: #786d1b;
+    }
+
+    /* Subscribe form */
+    .footer-subscribe {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 18px rgb(0 0 0 / 0.1);
+      max-width: 350px;
+      margin: 0 auto;
+      user-select: none;
+    }
+    .footer-subscribe h3 {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: #786d1b;
+    }
+    .footer-subscribe p {
+      font-weight: 500;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 18px;
+      color: #786d1b;
+    }
+    .subscribe-input-container {
+      position: relative;
+      width: 100%;
+    }
+    .subscribe-input-container input[type="email"] {
+      width: 100%;
+      padding: 12px 46px 12px 16px;
+      border: 2px solid #786d1b;
+      border-radius: 45px;
+      font-size: 1rem;
+      font-weight: 500;
+      outline-offset: 2px;
+      transition: border-color 0.3s ease;
+    }
+    .subscribe-input-container input[type="email"]:focus {
+      border-color: #786d1b;
+    }
+    .subscribe-input-container button {
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      outline: none;
+      width: 32px;
+      height: 32px;
+      filter: drop-shadow(0 0 1px #786d1b);
+      transition: filter 0.3s ease;
+    }
+    .subscribe-input-container button:hover {
+      filter: drop-shadow(0 0 3px #786d1b);
+    }
+    .subscribe-input-container button svg {
+      fill: #6c9647;
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Social Icons */
+    .footer-socials {
+      margin-top: 28px;
+      display: flex;
+      justify-content: flex-start;
+      gap: 18px;
+    }
+    .footer-socials a {
+      color: #786d1b;
+      transition: color 0.3s ease;
+      font-size: 1.8rem;
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+    }
+    .footer-socials a:hover {
+      color: #786d1b;
+    }
+
+    /* Responsive below 900px */
+    @media (max-width: 900px){
+      .footer-container {
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+      }
+      .footer-col {
+        max-width: 90vw;
+      }
+      .footer-subscribe {
+        max-width: 100%;
+      }
+      .icons-container {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="stand-for-section" aria-label="What We Stand For">
+    <a href="index.html">Back to Home</a>
+    <nav>
+    <a href="shop.html">Shop Category</a>
+    <a href="brands.html">Brands</a>
+    <a href="offers.html">Offers</a>
+    <a href="magazine.html">Magazine</a>
+    <a href="stand.html">About Us</a>
+  </nav>
+    <h2>What we stand for</h2>
+    <p>Let’s create a purposeful world where we embrace consciousness consciously, as a collective.</p>
+    <div class="icons-container">
+      <!-- Aura symbol icon item -->
+      <div class="icon-item aura" aria-label="Aura symbol">
+        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" >
+          <circle cx="32" cy="32" r="14" stroke="currentColor" stroke-width="3" fill="none"/>
+          <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="6 6"/>
+          <circle cx="32" cy="32" r="26" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="2 4"/>
+          <path d="M32 6v10M32 48v10M6 32h10M48 32h10M18 18l7 7M39 39l7 7M18 46l7-7M39 25l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="icon-text">AURA</div>
+      </div>
+
+      <!-- >92% Natural -->
+      <div class="icon-item" aria-label="More than 92% Natural ingredients">
+        
+        <div class="icon-text">&gt;92%<br>Natural</div>
+      </div>
+
+      <!-- Refillable -->
+      <div class="icon-item" aria-label="Refillable packaging">
+        
+        <div class="icon-text">Refillable</div>
+      </div>
+
+      <!-- Vegan -->
+      <div class="icon-item" aria-label="Vegan products">
+        
+        <div class="icon-text">Vegan</div>
+      </div>
+
+      <!-- No Harmful Chemicals -->
+      <div class="icon-item" aria-label="No harmful chemicals">
+       
+        <div class="icon-text">No Harmful<br>Chemicals</div>
+      </div>
+
+      <!-- Proudly Indian -->
+      <div class="icon-item" aria-label="Proudly Indian">
+        
+        <div class="icon-text">Proudly<br>Indian</div>
+      </div>
+
+      <!-- Cruelty Free -->
+      <div class="icon-item" aria-label="Cruelty free products">
+        
+        <div class="icon-text">Cruelty Free</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-logo" aria-label="Aura symbol and company name">
+          <!-- Aura symbol SVG -->
+          <svg class="aura-symbol" viewBox="0 0 64 64" aria-hidden="true" focusable="false" >
+            <circle cx="32" cy="32" r="14" />
+            <circle cx="32" cy="32" r="20" stroke-dasharray="6 6"/>
+            <circle cx="32" cy="32" r="26" stroke-dasharray="2 4"/>
+            <path d="M32 6v10M32 48v10M6 32h10M48 32h10M18 18l7 7M39 39l7 7M18 46l7-7M39 25l7-7" />
+          </svg>
+          aura
+        </div>
+        <div class="footer-contact">
+          <div>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c-3.86 0-7 3.14-7 7c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7z"/></svg>
+            Aura Beauty Private Limited A-512, The Capital, G Block, Bandra Kurla Complex, Bandra (E), Mumbai - 400051
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.62 10.79a15.91 15.91 0 006.59 6.59l2.2-2.19a1 1 0 011.11-.27 11.36 11.36 0 003.56.57a1 1 0 011 1v3.61a1 1 0 01-1 1a18 18 0 01-18-18a1 1 0 011-1h3.61a1 1 0 011 1 11.36 11.36 0 01.57 3.56a1 1 0 01-.27 1.11z"/></svg>
+            9892111872 / 1800 120 7252
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm-1 4l-7 5-7-5V6l7 5 7-5z"/></svg>
+            customercare@aurabeauty.com
+          </div>
+        </div>
+      </div>
+      <div class="footer-col footer-help">
+        <h3>Help</h3>
+        <ul>
+          <li>Shipping & Returns</li>
+          <li>Contact Us</li>
+          <li>Terms & Privacy</li>
+          <li>Payment & Cancellation</li>
+          <li>FAQs</li>
+        </ul>
+      </div>
+      <div class="footer-col footer-subscribe">
+        <h3>Subscribe !</h3>
+        <p>Be the first to know about product updates, exclusive offers, and exciting announcements.</p>
+        <form action="#">
+          <div class="subscribe-input-container">
+            <input type="email" placeholder="Enter your email..." aria-label="Email address for subscription" required />
+            <button type="submit" aria-label="Subscribe">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" width="20" height="20">
+                <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"></path>
+              </svg>
+            </button>
+          </div>
+        </form>
+        <div class="footer-socials" role="list">
+          <a href="#" aria-label="Facebook" role="listitem" tabindex="0" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-2c0-1.103.897-2 2-2h2v-5h-3.5c-3.284 0-6 2.716-6 6v3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" role="listitem" tabindex="0" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M7 2c-2.762 0-5 2.238-5 5v10c0 2.762 2.238 5 5 5h10c2.762 0 5-2.238 5-5v-10c0-2.762-2.238-5-5-5h-10zm10 5c.552 0 1 .448 1 1v1c0 .552-.448 1-1 1h-1c-.552 0-1-.448-1-1v-1c0-.552.448-1 1-1h1zm-5 2a5 5 0 1 1 -.001 10.001A5 5 0 0 1 12 9zm0 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" role="listitem" tabindex="0" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M23.498 6.186a2.999 2.999 0 0 0-2.107-2.12C19.004 3.5 12 3.5 12 3.5S4.996 3.5 2.609 4.066a2.997 2.997 0 0 0-2.108 2.12 31.032 31.032 0 0 0 0 5.628 2.999 2.999 0 0 0 2.108 2.12C4.996 16.5 12 16.5 12 16.5s7.003 0 8.391-.566a3 3 0 0 0 2.107-2.12 31.034 31.034 0 0 0 0-5.628zM9.75 15.02v-6.04l5 3.02-5 3.02z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

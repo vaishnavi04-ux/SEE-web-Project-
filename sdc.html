@@ -1,0 +1,273 @@
+<!-- File: offers.html (Main Offers Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Offers - Beauty Shop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #faf8e6;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      color: #222;
+    }
+    h1 {
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #333;
+    }
+    a.back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #6a0dad;
+      transition: color 0.3s ease;
+    }
+    a.back-link:hover {
+      text-decoration: underline;
+      color: #4b057a;
+    }
+    /* Container for the offer sections */
+    .offer-sections {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+    /* Offer section container */
+    .offer-section {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgb(0 0 0 / 0.12);
+      width: 320px;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+      user-select: none;
+      transition: box-shadow 0.25s ease;
+    }
+    .offer-section:hover {
+      box-shadow: 0 12px 30px rgb(0 0 0 / 0.25);
+    }
+    .offer-section h2 {
+      text-align: center;
+      color: #6a0dad;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    /* Slider Container */
+    .slider {
+      position: relative;
+      overflow: hidden;
+      height: 350px;
+    }
+
+    /* Slides wrapper */
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
+    }
+
+    /* Individual slide */
+    .slide {
+      min-width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 10px 0;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+    /* Offer item */
+    .offer-item {
+      background: #f6e6ff;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 3px 10px rgb(106 13 173 / 0.2);
+      text-align: center;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .offer-item:focus,
+    .offer-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgb(106 13 173 / 0.35);
+      outline: none;
+    }
+
+    .offer-item img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: contain;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      user-select: none;
+    }
+
+    .offer-item-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0 5px;
+      color: #4b0071;
+    }
+
+    /* Navigation buttons */
+    .nav-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    button.nav-btn {
+      pointer-events: auto;
+      background: rgba(106,13,173,0.8);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 6px 12px;
+      cursor: pointer;
+      border-radius: 50%;
+      margin: 0 8px;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+    button.nav-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    button.nav-btn:hover:not(:disabled) {
+      background: rgba(106,13,173,1);
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px){
+      .offer-section {
+        width: 90vw;
+        max-width: 500px;
+      }
+      .slide {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 520px){
+      .slide {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+      .slider {
+        height: 420px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Offers</h1>
+  <a href="index.html" class="back-link">Back to Home</a>
+
+  <div class="offer-sections">
+    <!-- Three separate sections will be inserted here -->
+    <div id="section1" class="offer-section">
+      <h2>20% Off Lip Products</h2>
+      <div class="slider" aria-label="20 percent off lip products slider">
+        <div class="slides"></div>
+        <div class="nav-buttons">
+          <button class="nav-btn prev-btn" aria-label="Previous product slide" disabled>‹</button>
+          <button class="nav-btn next-btn" aria-label="Next product slide">›</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="section2" class="offer-section">
+      <h2>Buy One Get One Hair Care</h2>
+      <div class="slider" aria-label="Buy one get one hair care slider">
+        <div class="slides"></div>
+        <div class="nav-buttons">
+          <button class="nav-btn prev-btn" aria-label="Previous product slide" disabled>‹</button>
+          <button class="nav-btn next-btn" aria-label="Next product slide">›</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="section3" class="offer-section">
+      <h2>Skincare Bundle Deal</h2>
+      <div class="slider" aria-label="Skincare bundle deal slider">
+        <div class="slides"></div>
+        <div class="nav-buttons">
+          <button class="nav-btn prev-btn" aria-label="Previous product slide" disabled>‹</button>
+          <button class="nav-btn next-btn" aria-label="Next product slide">›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Data for each section: 10 offer products each with image, title and official URL
+    const offerSections = {
+      section1: [
+        {
+          title: "MAC Ruby Woo Lipstick",
+          img: "https://www.maccosmetics.com/media/export/cms/products/13854/13854_alt_a_01.jpg",
+          url: "https://www.maccosmetics.com/product/13854/20000/products/makeup/lips/lipstick/ruby-woo-lipstick"
+        },
+        { title: "Fenty Gloss Bomb Lip Gloss", img: "https://www.fentybeauty.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-fenty-master-catalog/default/dw0fd79127/images/products/FFBE01_000/product_images/ffbe01_large_1.jpg", url: "https://www.fentybeauty.com/gloss-bomb-universal-lip-luminizer/FFBE01.html" },
+        { title: "Sephora Lip Balm", img: "https://www.sephora.com/productimages/sku/s2110200-main-zoom.jpg", url: "https://www.sephora.com/product/sephora-collection-lip-balm-s2110200" },
+        { title: "NYX Butter Gloss", img: "https://www.nyxcosmetics.com/dw/image/v2/AAUY_PRD/on/demandware.static/-/Sites-nyxmaster-catalog/default/dwic55faf8/images/zoom/NYX11276_1_zoom.jpg", url: "https://www.nyxcosmetics.com/butter-gloss/NYX11276.html" },
+        { title: "Ulta Matte Lip Crayon", img: "https://images.ulta.com/is/image/Ulta/2547735?$md$", url: "https://www.ulta.com/matte-lip-crayon?productId=pimprod2013013" },
+        { title: "MAC Prep+Prime Fix+", img: "https://www.maccosmetics.com/media/export/cms/products/13843/13843_main_1.jpg", url: "https://www.maccosmetics.com/product/13843/60008/products/skincare/prep-prime-fix" },
+        { title: "Fenty Beauty Pro Filt'r Foundation", img: "https://www.fentybeauty.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-fenty-master-catalog/default/dw2da7e87b/images/products/FBF20_100/product_images/fbf20-100-large-1.jpg", url: "https://www.fentybeauty.com/pro-filtr-soft-matte-longwear-foundation/FBF20.html" },
+        { title: "Sephora Waterproof Eye Makeup Remover", img: "https://www.sephora.com/productimages/sku/s1798532-main-zoom.jpg", url: "https://www.sephora.com/product/sephora-collection-waterproof-eye-makeup-remover-s1798532" },
+        { title: "NYX Total Control Drop Foundation", img: "https://www.nyxcosmetics.com/dw/image/v2/AAUY_PRD/on/demandware.static/-/Sites-nyxmaster-catalog/default/dw6c65c31e/images/zoom/NYX10928_1_zoom.jpg", url: "https://www.nyxcosmetics.com/total-control-drop-foundation/NYX10928.html" },
+        { title: "Fenty Beauty Sun Stalk'r Bronzer", img: "https://www.fentybeauty.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-fenty-master-catalog/default/dw1e7cf020/images/products/FBP03/product_images/fbp03-large-1.jpg", url: "https://www.fentybeauty.com/sun-stalkr-instant-warmth-bronzer/FBP03.html" }
+      ],
+      section2: [
+        { title: "Ulta Conditioning Shampoo", img: "https://images.ulta.com/is/image/Ulta/2515426?$md$", url: "https://www.ulta.com/ulta-beauty-conditioning-shampoo?productId=pimprod2007159" },
+        { title: "MAC Hair Care Oil", img: "https://www.maccosmetics.com/media/export/cms/products/13857/13857_main_1.jpg", url: "https://www.maccosmetics.com/product/13857/60008/products/hair/hair-oil" },
+        { title: "Fenty Beauty Hair Mist", img: "https://www.fentybeauty.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-fenty-master-catalog/default/dw3b6b61a5/images/products/FHM01/product_images/fhm01-large-1.jpg", url: "https://www.fentybeauty.com/hair-mist/FHM01.html" },
+        { title: "Sephora Hair Mask", img: "https://www.sephora.com/productimages/sku/s2254679-main-zoom.jpg", url: "https://www.sephora.com/product/sephora-collection-hair-mask-s2254679" },
+        { title: "NYX Hair Styling Gel", img: "https://www.nyxcosmetics.com/media/wysiwyg/catalogproduct/cataloggrid/NYX-Hair-Gel_01.jpg", url: "https://www.nyxcosmetics.com/hair-styling-gel" },
+        { title: "Ulta Hair Repair Conditioner", img: "https://images.ulta.com/is/image/Ulta/2543371?$md$", url: "https://www.ulta.com/hair-repair-conditioner?productId=pimprod2007158" },
+        { title: "Fenty Beauty Scalp Serum", img: "https://www.fentybeauty.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-fenty-master-catalog/default/dw8d6a7b4d/images/products/FSS01/product_images/fss01-large-1.jpg", url: "https://www.fentybeauty.com/scalp-serum/FSS01.html" },
+        { title: "MAC Heat Protectant Spray", img: "https://www.maccosmetics.com/media/export/cms/products/13858/13858_main_1.jpg", url: "https://www.maccosmetics.com/product/13858/60008/products/hair/heat-protectant-spray" },
+        { title: "Sephora Hair Detangler", img: "https://www.sephora.com/productimages/sku/s2187589-main-zoom.jpg", url: "https://www.sephora.com/product/sephora-collection-hair-detangler-s2187589" },
+        { title: "NYX Moisturizing Shampoo", img: "https://www.nyxcosmetics.com/media/wysiwyg/catalogproduct/cataloggrid/NYX-Moisturizing-Shampoo_01.jpg", url: "https://www.nyxcosmetics.com/moisturizing-shampoo" }
+      ],
+      section3: [
+        { title: "Ulta Skincare Bundle", img: "https://images.ulta.com/is/image/Ulta/2586367?$md$", url: "https://www.ulta.com/skincare-bundle?productId=pimprod2586367" },
+        { title: "Fenty Beauty Hydra Vizor", img: "https://www.fentybeauty.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-fenty-master-catalog/default/dw499fbbca/images/products/FHV01/product_images/fhv01-large-1.jpg", url: "https://www.fentybeauty.com/hydra-vizor/ FHV01.html" },
+        { title: "MAC Moisturizer", img: "https://www.maccosmetics.com/media/export/cms/products/13856/13856_main_1.jpg", url: "https://www.maccosmetics.com/product/13856/60008/products/skincare/moisturizer" },
+        { title: "Sephora Vitamin C Serum", img: "https://www.sephora.com/productimages/sku/s2168746-main-zoom.jpg", url: "https://www.sephora.com/product/vitamin-c-serum-s2168746" },
+        { title: "NYX Night Lotion", img: "https://www.nyxcosmetics.com/media/wysiwyg/catalogproduct/cataloggrid/NYX-Night-Lotion_01.jpg", url: "https://www.nyxcosmetics.com/night-lotion" },
+        { title: "Ulta Anti Wrinkle Set", img: "https://images.ulta.com/is/image/Ulta/2635278?$md$", url: "https://www.ulta.com/anti-wrinkle-set?productId=pimprod2635278" },
+        { title: "Fenty Beauty Face Primer", img: "https://www.fentybeauty.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-fenty-master-catalog/default/dwfb0f9840/images/products/FFP01/product_images/ffp01-large-1.jpg", url: "https://www.fentybeauty.com/face-primer/FFP01.html" },
+        { title: "MAC Eye Cream", img: "https://www.maccosmetics.com/media/export/cms/products/13857/13857_main_1.jpg", url: "https://www.maccosmetics.com/product/13857/60008/products/skincare/eye-cream" },
+        { title: "Sephora Face Mask", img: "https://www.sephora.com/productimages/sku/s2178948-main-zoom.jpg", url: "https://www.sephora.com/product/face-mask-s2178948" },
+        { title: "NYX Facial Cleanser", img: "https://www.nyxcosmetics.com/media/wysiwyg/catalogproduct/cataloggrid/NYX-Facial-Cleanser_01.jpg", url: "https://www.nyxcosmetics.com/facial-cleanser" }
+      ]
+    };
+
+    /* Function to create product cards HTML */
+    function createProductCard({ title, img, url }) {
+      const item = document.createElement('div');
+      item.className = 'offer-item';
+      item.tabIndex = 0; // keyboard accessible
+      item.title = title;
+      item.innerHTML = `
+        <img
